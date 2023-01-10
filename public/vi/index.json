@@ -1,0 +1,71 @@
+[
+{
+	"uri": "/vi/1-introduce/",
+	"title": "Giới thiệu",
+	"tags": [],
+	"description": "",
+	"content": "Giới thiệu Chúng tôi sẽ giới thiệu hai ví dụ về cách bạn có thể tự động hóa việc lưu trữ và quản lý snapshot với Data Lifecycle Manager, tiếp theo là hướng dẫn về cách bạn có thể sử dụng Bảng điều khiển EC2 để xem snapshot được quản lý và lưu trữ với Data Lifecycle Manager. Trong ví dụ đầu tiên, chúng tôi sẽ tạo chính sách dựa trên độ tuổi để tự động tạo và lưu trữ snapshot với một lịch trình chính sách duy nhất. Trong ví dụ thứ hai, chúng tôi sẽ tạo một chính sách để tự động tạo và lưu trữ snapshot bằng cách sử dụng nhiều lịch trình chính sách. Một lịch biểu sẽ giữ các snapshot hàng ngày / hàng tuần trong Amazon EBS Snapshot Standard tier (standard tier), trong khi lịch biểu còn lại chuyển snapshot được tạo theo chu kỳ hàng tháng sang EBS Snapshots Archive tier.\n"
+},
+{
+	"uri": "/vi/2-prerequiste/2.1-lauchec2/",
+	"title": "Khởi tạo EC2",
+	"tags": [],
+	"description": "",
+	"content": "Khởi tạo EC2  Trong giao diện AWS Management, tìm và chọn EC2   Trong giao diện EC2, chọn Instances\n Chọn Launch instances     Trong giao diện Lauch instances\n Nhập Name and tags là FCJ Snapshot     Đối với Key pair, bạn có thể chọn Proceed without a key pair (Not recommended)\n Đối với Networking, bạn có thể giữ nguyên cấu hình.    Đối với storage giữ nguyên và sau đó chọn Launch instance  Sau khi khởi tạo, bạn chọn View all instances  Đợi khoảng 2 phút, Status check là 2/2 checks passed  Chọn instance đã tạo và chọn Storage, sau đó chọn Volume  Thực hiện đặt tag cho volume là FCJ-Volume  "
+},
+{
+	"uri": "/vi/",
+	"title": "Tự động lưu trữ Amazon EBS Snapshot với Amazon Data Lifecycle Manager",
+	"tags": [],
+	"description": "",
+	"content": "Tự động lưu trữ Amazon EBS Snapshot với Amazon Data Lifecycle Manager Khách hàng sử dụng snapshot để chụp một bản sao dữ liệu của họ theo thời gian. Bản sao này có thể được sử dụng để cho phép khôi phục sau thảm họa, di chuyển dữ liệu giữa các region và tài khoản cũng như cải thiện việc tuân thủ sao lưu. Đối với các doanh nghiệp sử dụng snapshot, yêu cầu phổ biến là giữ snapshot (hiếm khi được truy cập) trong hơn 90 ngày, vì mục đích tuân thủ. Tuy nhiên, chi phí lưu trữ toàn bộ các snapshot này trong thời gian dài gây ra thách thức đối với ngân sách CNTT và khách hàng có nguy cơ không tuân thủ bằng cách xóa snapshot do áp lực ngân sách.\nVào ngày 29 tháng 11 năm 2021, Amazon Elastic Block Store (EBS) đã công bố tính khả dụng của Amazon EBS Snapshots Archive, một cấp lưu trữ mới để lưu giữ lâu dài snapshot của Amazon Elastic Block Store (EBS) đối với các EBS volume. Hôm nay, chúng tôi rất vui mừng thông báo rằng khách hàng hiện có thể tận dụng Amazon Data Lifecycle Manager - một giải pháp quản lý vòng đời dựa trên chính sách dành cho EBS snapshot và EBS-backed Amazon Machines Images(AMI) được hỗ trợ bởi EBS mà không phải trả thêm phí - để tạo các chính sách tùy chỉnh giúp tự động hóa lưu trữ và lưu giữ EBS snapshot .\nTrong bài lab này, chúng tôi đi sâu hơn vào việc sử dụng Amazon Data Lifecycle Manager để tự động hóa việc tạo, lưu trữ và xóa Amazon EBS snapshot. Những khách hàng cần lưu giữ các snapshot đầy đủ, đúng thời điểm để sao lưu và tuân thủ hiện có thể làm như vậy bằng cách tạo các chính sách \u0026rsquo;thiết lập và quên\u0026rsquo; thay vì phải quản lý và duy trì các tập lệnh tùy chỉnh phức tạp có thể dẫn đến mất dữ liệu do con người lỗi.\nNội dung  Giới thiệu Các bước chuẩn bị Tạo một policy schedule Tạo nhiều policy schedule Kiểm tra kết quả Dọn dẹp tài nguyên  "
+},
+{
+	"uri": "/vi/2-prerequiste/",
+	"title": "Các bước chuẩn bị",
+	"tags": [],
+	"description": "",
+	"content": "Các bước chuẩn bị Chúng ta sẽ chuẩn bị một EC2 để sử dụng cho các bước tiếp theo.\n Khởi tạo EC2 instance  "
+},
+{
+	"uri": "/vi/3-singlepolicyschedule/",
+	"title": "Sử dụng một policy schedule",
+	"tags": [],
+	"description": "",
+	"content": "Sử dụng một policy schedule   Truy cập vào giao diện EC2\n Chọn Lifecycle Manager Chọn Next step     Trong bước setting thực hiện chọn Target resources\n Target resource type chọn Volume Chọn theo tags là FCJ-Volume    Sử dụng IAM role mặc định.  Sau đó, chọn Next   Đối với cấu hình Schedule.\n Ở mục này, chúng ta sẽ cấu hình 1 schedule và 1 policy Phần Schedule name, đặt tên tùy ý. Phần Frequency, chọn Daily Every, chọn 1 hour Starting at lúc 14:00, bạn có thể tùy biến. Đối với *Retention type, chọn 30 days    Chọn Review policy  Chọn Create policy  Tạo lifecycle policy thành công.  "
+},
+{
+	"uri": "/vi/4-mutilplolicyschedule/",
+	"title": "Sử dụng nhiều policy schedule",
+	"tags": [],
+	"description": "",
+	"content": "Sử dụng nhiều policy schedule   Tương tự, nhưng chúng ta sẽ tạo nhiều policy schedule với 1 policy lifecycle.\n Trong giao diện Data Lifecycle Manager Chọn Create lifecycle policy     Chọn EBS snapshot policy\n Chọn Next     Đối với Target resource, chọn Volume\n Chọn theo tag: FCJ-Volume Đặt mô tả là FCJ-DLM-Week policy     Sử dụng IAM Role mặc định.\n Chọn Next.     Đến bước cấu hình Schedule\n Đối với Schedule name, nhập tùy ý. Chọn Frequency là Weekly Chọn các ngày theo ý bạn. Chọn thời gian starting at là 09:00 Đối với Retention type, chọn Age và chọn 180 days    Chọn Add another schedule   Thực hiện cấu hình Schedule thứ 2\n Đối với Schedule name, nhập tùy ý. Chọn Frequency là Monthly Chọn Day và Last Chọn thời gian starting at là 09:00 Đối với Retention type, chọn Age và chọn 1 days    Chọn Advanced settings   Đối với Snapshot archiving\n Chọn Archive snapshots created by this schedule Archive snapshots for 90 days Chọn Review policy    Kiểm tra lại và chọn Create policy  Hoàn thành tạo lifecycle policy  "
+},
+{
+	"uri": "/vi/5-monitoring/",
+	"title": "Kiểm tra kết quả",
+	"tags": [],
+	"description": "",
+	"content": "Kiểm tra kết quả.  Chúng ta kiểm tra kết quả bằng cách vào giao diện EC2 và chọn Snapshots  Chọn 1 snapshot đã được tạo và xem chi tiết.  Chọn Tags để xem thông tin chi tiết về schedule policy và data lifecycle policy  "
+},
+{
+	"uri": "/vi/6-cleanup/",
+	"title": "Dọn dẹp tài nguyên",
+	"tags": [],
+	"description": "",
+	"content": "Dọn dẹp tài nguyên   Thực hiện xóa lifecycle policy\n Chọn các polciy đã tạo Chọn Actions Chọn Delete lifecycle policy    Xác nhận xóa.   Chọn xóa các snapshot\n Chọn các snapshot liên quan bài lab Chọn Actions Chọn Delete snapshot    Xác nhận xóa.   Thực hiện Terminate EC2 instance.\n Chọn EC2 instance Chọn Instance state Chọn Terminate instance    "
+},
+{
+	"uri": "/vi/categories/",
+	"title": "Categories",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "/vi/tags/",
+	"title": "Tags",
+	"tags": [],
+	"description": "",
+	"content": ""
+}]
