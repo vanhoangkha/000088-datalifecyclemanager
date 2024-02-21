@@ -9,24 +9,24 @@
 
     <link rel="icon" href="/images/favicon.png" type="image/png">
 
-    <title>Automatically archive Amazon EBS Snapshots with Amazon Data Lifecycle Manager :: Automatically archive Amazon EBS Snapshots with Amazon Data Lifecycle Manager</title>
+    <title>Automatically Archive Amazon EBS Snapshots with Amazon Data Lifecycle Manager :: Automatically archive Amazon EBS Snapshots with Amazon Data Lifecycle Manager</title>
 
     
-    <link href="/css/nucleus.css?1701091877" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1701091877" rel="stylesheet">
-    <link href="/css/hybrid.css?1701091877" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1701091877" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1701091877" rel="stylesheet">
-    <link href="/css/auto-complete.css?1701091877" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1701091877" rel="stylesheet">
-    <link href="/css/theme.css?1701091877" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1701091877" rel="stylesheet">
+    <link href="/css/nucleus.css?1708527486" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1708527486" rel="stylesheet">
+    <link href="/css/hybrid.css?1708527486" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1708527486" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1708527486" rel="stylesheet">
+    <link href="/css/auto-complete.css?1708527486" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1708527486" rel="stylesheet">
+    <link href="/css/theme.css?1708527486" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1708527486" rel="stylesheet">
     
-    <link href="/css/theme-workshop.css?1701091877" rel="stylesheet">
+    <link href="/css/theme-workshop.css?1708527486" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1701091877"></script>
+    <script src="/js/jquery-3.3.1.min.js?1708527486"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1701091877"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1701091877"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1708527486"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1708527486"></script>
 <script type="text/javascript">
     
         var baseurl = "";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1701091877"></script>
+<script type="text/javascript" src="/js/search.js?1708527486"></script>
 
     
   </div>
@@ -88,7 +88,7 @@
         
         ">
       <a href="/1-introduce/">
-           <b> 1. </b> Introduction
+          <b> 1. </b>Introduction
           
             <i class="fas fa-check read-icon"></i>
           
@@ -108,13 +108,13 @@
  
   
     
-    <li data-nav-id="/2-prerequiste/" title="Preparation " class="dd-item 
+    <li data-nav-id="/2-prerequiste/" title="Preparation" class="dd-item 
         
         
         
         ">
       <a href="/2-prerequiste/">
-           <b> 2. </b> Preparation 
+          <b> 2. </b>Preparation
           
             <i class="fas fa-check read-icon"></i>
           
@@ -139,13 +139,13 @@
  
   
     
-    <li data-nav-id="/2-prerequiste/2.1-lauchec2/" title="Launch EC2 instance" class="dd-item 
+    <li data-nav-id="/2-prerequiste/2.1-lauchec2/" title="Launch EC2 Instance" class="dd-item 
         
         
         
         ">
       <a href="/2-prerequiste/2.1-lauchec2/">
-           <b> 2.1 </b> Launch EC2 instance
+          <b> 2.1 </b>Launch EC2 Instance
           
             <i class="fas fa-check read-icon"></i>
           
@@ -174,13 +174,13 @@
  
   
     
-    <li data-nav-id="/3-singlepolicyschedule/" title="Using a single policy schedule" class="dd-item 
+    <li data-nav-id="/3-singlepolicyschedule/" title="Using a Single Policy Schedule" class="dd-item 
         
         
         
         ">
       <a href="/3-singlepolicyschedule/">
-           <b> 3. </b> Using a single policy schedule
+          <b> 3. </b>Using a Single Policy Schedule
           
             <i class="fas fa-check read-icon"></i>
           
@@ -361,7 +361,7 @@
     <br>
     <br>
         <b> Last Updated </b> <br>
-        <i><font color=orange>27-11-2023</font></i>
+        <i><font color=orange>21-02-2024</font></i>
     </left>
     <left>
         <br>
@@ -401,11 +401,11 @@
 </span>
 
  
-<h1 id="automatically-archive-amazon-ebs-snapshots-with-amazon-data-lifecycle-manager">Automatically archive Amazon EBS Snapshots with Amazon Data Lifecycle Manager</h1>
-<p>Customers use snapshots to capture a point-in-time copy of their data, which can be used to enable disaster recovery, migrate data across regions and accounts, and improve backup compliance. For enterprises using snapshots, it is a common requirement to keep snapshots (which are seldom accessed) for more than 90 days, for compliance purposes. However, the cost of storing these full snapshots for extended periods presents a challenge to IT budget and customers risk non-compliance by deleting snapshots due to budget pressures.</p>
+<h1 id="automatically-archive-amazon-ebs-snapshots-with-amazon-data-lifecycle-manager">Automatically Archive Amazon EBS Snapshots with Amazon Data Lifecycle Manager</h1>
+<p>Customers utilize snapshots to capture a point-in-time copy of their data, enabling disaster recovery, migrating data across regions and accounts, and enhancing backup compliance. For enterprises that rely on snapshots, there is often a need to retain snapshots that are infrequently accessed for more than 90 days for compliance reasons. However, the cost associated with storing these full snapshots for prolonged periods poses a challenge to IT budgets, leading to potential non-compliance as customers may feel pressured to delete snapshots due to financial constraints.</p>
 <p><img src="/images/1/DLM.svg?featherlight=false&amp;width=10pc" alt="Amazon Data Lifecycle Manager"></p>
-<p>On November 29 2021, Amazon Elastic Block Store (EBS) announced the availability of Amazon EBS Snapshots Archive, a new storage tier for the long-term retention of Amazon Elastic Block Store (EBS) snapshots of EBS volumes. Today, we are excited to announce that customers can now leverage Amazon Data Lifecycle Manager – a policy-based lifecycle management solution for EBS Snapshots and EBS-backed Amazon Machines Images (AMIs) available at no additional cost – to create custom policies that automate the archival and retention of EBS Snapshots.</p>
-<p>In this workshop, we dive deeper into using Data Lifecycle Manager to automate the creation, archival, and deletion of Amazon EBS Snapshots. Customers that need to keep full, point-in-time snapshots for backup and compliance can now do so by creating ‘set-and-forget’ policies instead of having to manage and maintain complex custom scripts that may lead to data loss because of human errors.</p>
+<p>On November 29, 2021, Amazon Elastic Block Store (EBS) introduced the Amazon EBS Snapshots Archive, a new storage tier designed for the long-term retention of Amazon EBS snapshots of EBS volumes. We are thrilled to announce that customers can now utilize Amazon Data Lifecycle Manager – a policy-based lifecycle management solution for EBS Snapshots and EBS-backed Amazon Machine Images (AMIs) at no additional cost – to establish custom policies that automate the archival and retention of EBS Snapshots.</p>
+<p>In this workshop, we explore how to use Data Lifecycle Manager to automate the creation, archival, and deletion of Amazon EBS Snapshots. Customers who need to maintain full, point-in-time snapshots for backup and compliance purposes can now achieve this through &lsquo;set-and-forget&rsquo; policies, eliminating the need for complex custom scripts that could result in data loss due to human errors.</p>
 <p><img src="/images/1/00010.png?featherlight=false&amp;width=90pc" alt="Launch EC2"></p>
 	
   
@@ -572,19 +572,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1701091877"></script>
-    <script src="/js/perfect-scrollbar.min.js?1701091877"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1701091877"></script>
-    <script src="/js/jquery.sticky.js?1701091877"></script>
-    <script src="/js/featherlight.min.js?1701091877"></script>
-    <script src="/js/highlight.pack.js?1701091877"></script>
+    <script src="/js/clipboard.min.js?1708527486"></script>
+    <script src="/js/perfect-scrollbar.min.js?1708527486"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1708527486"></script>
+    <script src="/js/jquery.sticky.js?1708527486"></script>
+    <script src="/js/featherlight.min.js?1708527486"></script>
+    <script src="/js/highlight.pack.js?1708527486"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1701091877"></script>
-    <script src="/js/learn.js?1701091877"></script>
-    <script src="/js/hugo-learn.js?1701091877"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1708527486"></script>
+    <script src="/js/learn.js?1708527486"></script>
+    <script src="/js/hugo-learn.js?1708527486"></script>
 
-    <link href="/mermaid/mermaid.css?1701091877" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1701091877"></script>
+    <link href="/mermaid/mermaid.css?1708527486" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1708527486"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

@@ -9,24 +9,24 @@
 
     <link rel="icon" href="/images/favicon.png" type="image/png">
 
-    <title>Launch EC2 instance :: Automatically archive Amazon EBS Snapshots with Amazon Data Lifecycle Manager</title>
+    <title>Launch EC2 Instance :: Automatically archive Amazon EBS Snapshots with Amazon Data Lifecycle Manager</title>
 
     
-    <link href="/css/nucleus.css?1701091877" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1701091877" rel="stylesheet">
-    <link href="/css/hybrid.css?1701091877" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1701091877" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1701091877" rel="stylesheet">
-    <link href="/css/auto-complete.css?1701091877" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1701091877" rel="stylesheet">
-    <link href="/css/theme.css?1701091877" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1701091877" rel="stylesheet">
+    <link href="/css/nucleus.css?1708527486" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1708527486" rel="stylesheet">
+    <link href="/css/hybrid.css?1708527486" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1708527486" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1708527486" rel="stylesheet">
+    <link href="/css/auto-complete.css?1708527486" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1708527486" rel="stylesheet">
+    <link href="/css/theme.css?1708527486" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1708527486" rel="stylesheet">
     
-    <link href="/css/theme-workshop.css?1701091877" rel="stylesheet">
+    <link href="/css/theme-workshop.css?1708527486" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1701091877"></script>
+    <script src="/js/jquery-3.3.1.min.js?1708527486"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1701091877"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1701091877"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1708527486"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1708527486"></script>
 <script type="text/javascript">
     
         var baseurl = "";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1701091877"></script>
+<script type="text/javascript" src="/js/search.js?1708527486"></script>
 
     
   </div>
@@ -88,7 +88,7 @@
         
         ">
       <a href="/1-introduce/">
-           <b> 1. </b> Introduction
+          <b> 1. </b>Introduction
           
             <i class="fas fa-check read-icon"></i>
           
@@ -108,13 +108,13 @@
  
   
     
-    <li data-nav-id="/2-prerequiste/" title="Preparation " class="dd-item 
+    <li data-nav-id="/2-prerequiste/" title="Preparation" class="dd-item 
         parent
         
         
         ">
       <a href="/2-prerequiste/">
-           <b> 2. </b> Preparation 
+          <b> 2. </b>Preparation
           
             <i class="fas fa-check read-icon"></i>
           
@@ -139,13 +139,13 @@
  
   
     
-    <li data-nav-id="/2-prerequiste/2.1-lauchec2/" title="Launch EC2 instance" class="dd-item 
+    <li data-nav-id="/2-prerequiste/2.1-lauchec2/" title="Launch EC2 Instance" class="dd-item 
         parent
         active
         
         ">
       <a href="/2-prerequiste/2.1-lauchec2/">
-           <b> 2.1 </b> Launch EC2 instance
+          <b> 2.1 </b>Launch EC2 Instance
           
             <i class="fas fa-check read-icon"></i>
           
@@ -174,13 +174,13 @@
  
   
     
-    <li data-nav-id="/3-singlepolicyschedule/" title="Using a single policy schedule" class="dd-item 
+    <li data-nav-id="/3-singlepolicyschedule/" title="Using a Single Policy Schedule" class="dd-item 
         
         
         
         ">
       <a href="/3-singlepolicyschedule/">
-           <b> 3. </b> Using a single policy schedule
+          <b> 3. </b>Using a Single Policy Schedule
           
             <i class="fas fa-check read-icon"></i>
           
@@ -361,7 +361,7 @@
     <br>
     <br>
         <b> Last Updated </b> <br>
-        <i><font color=orange>27-11-2023</font></i>
+        <i><font color=orange>21-02-2024</font></i>
     </left>
     <left>
         <br>
@@ -414,7 +414,7 @@
             
           
           
-            <a href='/'>Automatically archive Amazon EBS Snapshots with Amazon Data Lifecycle Manager</a> > <a href='/2-prerequiste/'>Preparation </a> > Launch EC2 instance
+            <a href='/'>Automatically Archive Amazon EBS Snapshots with Amazon Data Lifecycle Manager</a> > <a href='/2-prerequiste/'>Preparation</a> > Launch EC2 Instance
           
         
           
@@ -451,7 +451,7 @@
           
             <h1>
               
-              Launch EC2 instance
+              Launch EC2 Instance
             </h1>
           
 
@@ -459,58 +459,54 @@
 
 
 
-	<h4 id="launch-ec2-instance">Launch EC2 instance</h4>
+	<h4 id="launch-ec2-instance">Launch EC2 Instance</h4>
 <ol>
-<li>In the AWS Management console, find and select <strong>EC2</strong></li>
-</ol>
+<li>
+<p>In the AWS Management Console, navigate to and select <strong>EC2</strong>.</p>
 <p><img src="/images/1/0001.png?featherlight=false&amp;width=90pc" alt="Launch EC2"></p>
-<ol start="2">
-<li>
-<p>In the <strong>EC2</strong> console, select <strong>Instances</strong></p>
-<ul>
-<li>Select <strong>Launch instances</strong></li>
-</ul>
 </li>
-</ol>
+<li>
+<p>Within the <strong>EC2</strong> console, click on <strong>Instances</strong>.</p>
+<ul>
+<li>Then, click on <strong>Launch instances</strong>.</li>
+</ul>
 <p><img src="/images/1/0002.png?featherlight=false&amp;width=90pc" alt="Launch EC2"></p>
-<ol start="3">
-<li>
-<p>In the <strong>Lauch instances</strong> console</p>
-<ul>
-<li>Enter <strong>Name and tags</strong> as <strong><code>FCJ Snapshot</code></strong></li>
-</ul>
 </li>
-</ol>
+<li>
+<p>On the <strong>Launch Instances</strong> page:</p>
+<ul>
+<li>Specify <strong>Name and tags</strong> as <strong><code>FCJ Snapshot</code></strong>.</li>
+</ul>
 <p><img src="/images/1/0003.png?featherlight=false&amp;width=90pc" alt="Launch EC2"></p>
-<ol start="4">
+</li>
 <li>
-<p>For <strong>Key pair</strong>, you can choose <strong>Proceed without a key pair (Not recommended)</strong></p>
+<p>Under <strong>Key Pair</strong>, you may select <strong>Proceed without a key pair (Not recommended)</strong>.</p>
 <ul>
-<li>For <strong>Networking</strong> you can keep the same configuration.</li>
+<li>For <strong>Networking</strong>, retain the default configuration.</li>
 </ul>
+<p><img src="/images/1/0004.png?featherlight=false&amp;width=90pc" alt="Launch EC2"></p>
+</li>
+<li>
+<p>For <strong>Storage</strong>, maintain the default settings and then click on <strong>Launch instance</strong>.</p>
+<p><img src="/images/1/0005.png?featherlight=false&amp;width=90pc" alt="Launch EC2"></p>
+</li>
+<li>
+<p>Once the EC2 instance is launched, click on <strong>View all instances</strong>.</p>
+<p><img src="/images/1/0006.png?featherlight=false&amp;width=90pc" alt="Launch EC2"></p>
+</li>
+<li>
+<p>Allow approximately 2 minutes for the instance to initialize. Wait until the <strong>Status check</strong> shows <strong>2/2 checks passed</strong>.</p>
+<p><img src="/images/1/0007.png?featherlight=false&amp;width=90pc" alt="Launch EC2"></p>
+</li>
+<li>
+<p>Select the newly created instance, navigate to <strong>Storage</strong>, and then click on <strong>Volume</strong>.</p>
+<p><img src="/images/1/0008.png?featherlight=false&amp;width=90pc" alt="Launch EC2"></p>
+</li>
+<li>
+<p>Assign the volume tag as <strong>FCJ-Volume</strong>.</p>
+<p><img src="/images/1/0009.png?featherlight=false&amp;width=90pc" alt="Launch EC2"></p>
 </li>
 </ol>
-<p><img src="/images/1/0004.png?featherlight=false&amp;width=90pc" alt="Launch EC2"></p>
-<ol start="5">
-<li>For <strong>storage</strong> keep the same and then select <strong>Launch instance</strong></li>
-</ol>
-<p><img src="/images/1/0005.png?featherlight=false&amp;width=90pc" alt="Launch EC2"></p>
-<ol>
-<li>After launch EC2, select <strong>View all instances</strong></li>
-</ol>
-<p><img src="/images/1/0006.png?featherlight=false&amp;width=90pc" alt="Launch EC2"></p>
-<ol start="7">
-<li>Wait about 2 minutes, <strong>Status check</strong> is <strong>2/2 checks passed</strong></li>
-</ol>
-<p><img src="/images/1/0007.png?featherlight=false&amp;width=90pc" alt="Launch EC2"></p>
-<ol start="8">
-<li>Select the <strong>instance</strong> created and select <strong>Storage</strong>, then select <strong>Volume</strong></li>
-</ol>
-<p><img src="/images/1/0008.png?featherlight=false&amp;width=90pc" alt="Launch EC2"></p>
-<ol start="9">
-<li>Set the volume tag as <strong>FCJ-Volume</strong></li>
-</ol>
-<p><img src="/images/1/0009.png?featherlight=false&amp;width=90pc" alt="Launch EC2"></p>
 
 
 
@@ -677,10 +673,10 @@
 	 
 	 
 		
-			<a class="nav nav-prev" href="/2-prerequiste/" title="Preparation "> <i class="fa fa-chevron-left"></i></a>
+			<a class="nav nav-prev" href="/2-prerequiste/" title="Preparation"> <i class="fa fa-chevron-left"></i></a>
 		
 		
-			<a class="nav nav-next" href="/3-singlepolicyschedule/" title="Using a single policy schedule" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+			<a class="nav nav-next" href="/3-singlepolicyschedule/" title="Using a Single Policy Schedule" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>
@@ -690,19 +686,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1701091877"></script>
-    <script src="/js/perfect-scrollbar.min.js?1701091877"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1701091877"></script>
-    <script src="/js/jquery.sticky.js?1701091877"></script>
-    <script src="/js/featherlight.min.js?1701091877"></script>
-    <script src="/js/highlight.pack.js?1701091877"></script>
+    <script src="/js/clipboard.min.js?1708527486"></script>
+    <script src="/js/perfect-scrollbar.min.js?1708527486"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1708527486"></script>
+    <script src="/js/jquery.sticky.js?1708527486"></script>
+    <script src="/js/featherlight.min.js?1708527486"></script>
+    <script src="/js/highlight.pack.js?1708527486"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1701091877"></script>
-    <script src="/js/learn.js?1701091877"></script>
-    <script src="/js/hugo-learn.js?1701091877"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1708527486"></script>
+    <script src="/js/learn.js?1708527486"></script>
+    <script src="/js/hugo-learn.js?1708527486"></script>
 
-    <link href="/mermaid/mermaid.css?1701091877" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1701091877"></script>
+    <link href="/mermaid/mermaid.css?1708527486" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1708527486"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

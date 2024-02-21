@@ -1,82 +1,79 @@
 ---
-title : "Sử dụng nhiều policy schedule"
-date :  "`r Sys.Date()`" 
-weight : 4
-chapter : false
-pre : " <b> 4. </b> "
+title: "Sử dụng nhiều policy schedule"
+date: "`r Sys.Date()`"
+weight: 4
+chapter: false
+pre: "<b> 4. </b>"
 ---
 
 #### Sử dụng nhiều policy schedule
 
-1. Tương tự, nhưng chúng ta sẽ tạo nhiều policy schedule với 1 policy lifecycle.
+1. Tương tự như trước, nhưng lần này chúng ta sẽ tạo nhiều policy schedule với một policy lifecycle.
 
-   - Trong giao diện **Data Lifecycle Manager**
-   - Chọn **Create lifecycle policy**
+   - Truy cập vào giao diện **Data Lifecycle Manager**.
+   - Chọn **Create lifecycle policy**.
 
-![Use mutilple policy schedule](/images/3/0001.png?featherlight=false&width=90pc)
+![Sử dụng nhiều policy schedule](/images/3/0001.png?featherlight=false&width=90pc)
 
-2. Chọn **EBS snapshot policy**
+2. Chọn **EBS snapshot policy**.
 
-   - Chọn **Next**
+   - Nhấn **Next**.
 
-![Use mutilple policy schedule](/images/3/0002.png?featherlight=false&width=90pc)
+![Sử dụng nhiều policy schedule](/images/3/0002.png?featherlight=false&width=90pc)
 
-3. Đối với **Target resource**, chọn **Volume**
+3. Tại mục **Target resource**, chọn **Volume**.
 
-   - Chọn theo tag: **FCJ-Volume**
-   - Đặt mô tả là **FCJ-DLM-Week policy**
+   - Chọn theo tag: **FCJ-Volume**.
+   - Đặt mô tả: **FCJ-DLM-Week policy**.
 
-![Use mutilple policy schedule](/images/3/0003.png?featherlight=false&width=90pc)
+![Sử dụng nhiều policy schedule](/images/3/0003.png?featherlight=false&width=90pc)
 
 4. Sử dụng **IAM Role** mặc định.
 
-   - Chọn **Next**.
+   - Nhấn **Next**.
 
-![Use mutilple policy schedule](/images/3/0004.png?featherlight=false&width=90pc)
+![Sử dụng nhiều policy schedule](/images/3/0004.png?featherlight=false&width=90pc)
 
-5. Đến bước cấu hình **Schedule**
+5. Tiếp tục đến bước cấu hình **Schedule**.
 
-   - Đối với **Schedule name**, nhập tùy ý.
-   - Chọn **Frequency** là **Weekly**
-   - Chọn các ngày theo ý bạn.
-   - Chọn thời gian **starting at** là **09:00**
-   - Đối với **Retention type**, chọn **Age** và chọn **180 days**
+   - Tại **Schedule name**, nhập tên tùy chọn.
+   - Chọn **Frequency** là **Weekly**.
+   - Chọn các ngày bạn muốn.
+   - Đặt thời gian bắt đầu vào lúc **09:00**.
+   - Tại **Retention type**, chọn **Age** và thiết lập **180 days**.
 
-![Use mutilple policy schedule](/images/3/0005.png?featherlight=false&width=90pc)
+![Sử dụng nhiều policy schedule](/images/3/0005.png?featherlight=false&width=90pc)
 
-6. Chọn **Add another schedule**
+6. Chọn **Add another schedule**.
 
-![Use mutilple policy schedule](/images/3/0006.png?featherlight=false&width=90pc)
+![Sử dụng nhiều policy schedule](/images/3/0006.png?featherlight=false&width=90pc)
 
-7. Thực hiện cấu hình **Schedule** thứ 2
+7. Cấu hình **Schedule** thứ hai.
 
-   - Đối với **Schedule name**, nhập tùy ý.
-   - Chọn **Frequency** là **Monthly**
-   - Chọn **Day** và **Last**
-   - Chọn thời gian **starting at** là **09:00**
-   - Đối với **Retention type**, chọn **Age** và chọn **1 days**
+   - Tại **Schedule name**, nhập tên tùy chọn.
+   - Chọn **Frequency** là **Monthly**.
+   - Chọn **Day** và **Last**.
+   - Đặt thời gian bắt đầu vào lúc **09:00**.
+   - Tại **Retention type**, chọn **Age** và thiết lập **1 day**.
 
-![Use mutilple policy schedule](/images/3/0007.png?featherlight=false&width=90pc)
+![Sử dụng nhiều policy schedule](/images/3/0007.png?featherlight=false&width=90pc)
 
-8. Chọn **Advanced settings**
+8. Chọn **Advanced settings**.
 
-![Use mutilple policy schedule](/images/3/0008.png?featherlight=false&width=90pc)
+![Sử dụng nhiều policy schedule](/images/3/0008.png?featherlight=false&width=90pc)
 
-9. Đối với **Snapshot archiving**
+9. Tại **Snapshot archiving**.
 
-   - Chọn **Archive snapshots created by this schedule**
-   - Archive snapshots for **90 days**
-   - Chọn **Review policy**
+   - Chọn **Archive snapshots created by this schedule**.
+   - Lưu trữ snapshots trong **90 days**.
+   - Nhấn **Review policy**.
 
-![Use mutilple policy schedule](/images/3/0009.png?featherlight=false&width=90pc)
+![Sử dụng nhiều policy schedule](/images/3/0009.png?featherlight=false&width=90pc)
 
-10. Kiểm tra lại và chọn **Create policy**
+10. Kiểm tra lại thông tin và chọn **Create policy**.
 
-![Use mutilple policy schedule](/images/3/00010.png?featherlight=false&width=90pc)
+![Sử dụng nhiều policy schedule](/images/3/00010.png?featherlight=false&width=90pc)
 
-11. Hoàn thành tạo **lifecycle policy**
+11. Hoàn thành việc tạo **lifecycle policy**.
 
-![Use mutilple policy schedule](/images/3/00011.png?featherlight=false&width=90pc)
-
-
-
+![Sử dụng nhiều policy schedule](/images/3/00011.png?featherlight=false&width=90pc)

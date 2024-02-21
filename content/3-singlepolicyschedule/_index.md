@@ -1,54 +1,51 @@
 ---
-title : "Using a single policy schedule"
-date : "`r Sys.Date()`"
-weight : 3
-chapter : false
-pre : " <b> 3. </b> "
+title: "Using a Single Policy Schedule"
+date: "`r Sys.Date()`"
+weight: 3
+chapter: false
+pre: "<b> 3. </b>"
 ---
 
-#### Use a policy schedule
+### Use a Policy Schedule
 
-1. Access to **EC2** console
+1. **Access the EC2 Console**
+   - Navigate to the **Lifecycle Manager**.
+   - Click on **Next step**.
 
-   - Select **Lifecycle Manager**
-   - Select **Next step**
+   ![Use Single Policy Schedule](/images/2/0001.png?featherlight=false&width=90pc)
 
-![Use single policy schedule](/images/2/0001.png?featherlight=false&width=90pc)
+2. **In the Settings Step, Target Resources**
+   - For **Target resource type**, choose **Volume**.
+   - Filter by tags, specifically **FCJ-Volume**.
 
-2. In the **setting** step, select **Target resources**
+   ![Use Single Policy Schedule](/images/2/0002.png?featherlight=false&width=90pc)
 
-   - **Target resource type** select **Volume**
-   - Select by tags as **FCJ-Volume**
+3. **Utilize the Default IAM Role**
 
-![Use single policy schedule](/images/2/0002.png?featherlight=false&width=90pc)
+   ![Use Single Policy Schedule](/images/2/0003.png?featherlight=false&width=90pc)
 
-3. Use the default IAM role.
+4. **Proceed by Selecting Next**
 
-![Use single policy schedule](/images/2/0003.png?featherlight=false&width=90pc)
+   ![Use Single Policy Schedule](/images/2/0004.png?featherlight=false&width=90pc)
 
-4. Then select **Next**
+5. **Configure the Schedule**
+   - This step involves setting up one schedule and one policy.
+   - In the **Schedule name** field, enter a name of your choice.
+   - For **Frequency**, select **Daily**.
+   - Under **Every**, choose **1 hour**.
+   - Set **Starting at** to **14:00** or adjust as needed.
+   - For **Retention type**, select **30 days**.
 
-![Use single policy schedule](/images/2/0004.png?featherlight=false&width=90pc)
+   ![Use Single Policy Schedule](/images/2/0005.png?featherlight=false&width=90pc)
 
-5. For **Schedule** configuration.
+6. **Review the Policy**
 
-   - In this section, we will configure 1 schedule and 1 policy.
-   - Section **Schedule name**, name it arbitrarily.
-   - In the **Frequency** section, select **Daily**.
-   - **Every**, choose **1 hour**.
-   - **Starting at** at **14:00**, you can customize.
-   - For ***Retention type**, choose **30 days**.
+   ![Use Single Policy Schedule](/images/2/0006.png?featherlight=false&width=90pc)
 
-![Use single policy schedule](/images/2/0005.png?featherlight=false&width=90pc)
+7. **Create the Policy**
 
-6. Select **Review policy**
+   ![Use Single Policy Schedule](/images/2/0007.png?featherlight=false&width=90pc)
 
-![Use single policy schedule](/images/2/0006.png?featherlight=false&width=90pc)
+8. **Lifecycle Policy Created Successfully**
 
-7. Select **Create policy**
-
-![Use single policy schedule](/images/2/0007.png?featherlight=false&width=90pc)
-
-8. Create **lifecycle policy** successfully.
-
-![Use single policy schedule](/images/2/0008.png?featherlight=false&width=90pc)
+   ![Use Single Policy Schedule](/images/2/0008.png?featherlight=false&width=90pc)

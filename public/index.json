@@ -1,38 +1,38 @@
 [
 {
 	"uri": "/",
-	"title": "Automatically archive Amazon EBS Snapshots with Amazon Data Lifecycle Manager",
+	"title": "Automatically Archive Amazon EBS Snapshots with Amazon Data Lifecycle Manager",
 	"tags": [],
 	"description": "",
-	"content": "Automatically archive Amazon EBS Snapshots with Amazon Data Lifecycle Manager Customers use snapshots to capture a point-in-time copy of their data, which can be used to enable disaster recovery, migrate data across regions and accounts, and improve backup compliance. For enterprises using snapshots, it is a common requirement to keep snapshots (which are seldom accessed) for more than 90 days, for compliance purposes. However, the cost of storing these full snapshots for extended periods presents a challenge to IT budget and customers risk non-compliance by deleting snapshots due to budget pressures.\nOn November 29 2021, Amazon Elastic Block Store (EBS) announced the availability of Amazon EBS Snapshots Archive, a new storage tier for the long-term retention of Amazon Elastic Block Store (EBS) snapshots of EBS volumes. Today, we are excited to announce that customers can now leverage Amazon Data Lifecycle Manager – a policy-based lifecycle management solution for EBS Snapshots and EBS-backed Amazon Machines Images (AMIs) available at no additional cost – to create custom policies that automate the archival and retention of EBS Snapshots.\nIn this workshop, we dive deeper into using Data Lifecycle Manager to automate the creation, archival, and deletion of Amazon EBS Snapshots. Customers that need to keep full, point-in-time snapshots for backup and compliance can now do so by creating ‘set-and-forget’ policies instead of having to manage and maintain complex custom scripts that may lead to data loss because of human errors.\n"
+	"content": "Automatically Archive Amazon EBS Snapshots with Amazon Data Lifecycle Manager Customers utilize snapshots to capture a point-in-time copy of their data, enabling disaster recovery, migrating data across regions and accounts, and enhancing backup compliance. For enterprises that rely on snapshots, there is often a need to retain snapshots that are infrequently accessed for more than 90 days for compliance reasons. However, the cost associated with storing these full snapshots for prolonged periods poses a challenge to IT budgets, leading to potential non-compliance as customers may feel pressured to delete snapshots due to financial constraints.\nOn November 29, 2021, Amazon Elastic Block Store (EBS) introduced the Amazon EBS Snapshots Archive, a new storage tier designed for the long-term retention of Amazon EBS snapshots of EBS volumes. We are thrilled to announce that customers can now utilize Amazon Data Lifecycle Manager – a policy-based lifecycle management solution for EBS Snapshots and EBS-backed Amazon Machine Images (AMIs) at no additional cost – to establish custom policies that automate the archival and retention of EBS Snapshots.\nIn this workshop, we explore how to use Data Lifecycle Manager to automate the creation, archival, and deletion of Amazon EBS Snapshots. Customers who need to maintain full, point-in-time snapshots for backup and compliance purposes can now achieve this through \u0026lsquo;set-and-forget\u0026rsquo; policies, eliminating the need for complex custom scripts that could result in data loss due to human errors.\n"
 },
 {
 	"uri": "/1-introduce/",
 	"title": "Introduction",
 	"tags": [],
 	"description": "",
-	"content": "Introduction In this workshop, we will showcase two examples of how you can automate snapshot archival and management with Data Lifecycle Manager, followed by guidance on how you can use the EC2 Console to view the snapshots managed and archived by Data Lifecycle Manager. In the first example, we will create an age-based policy to automate snapshot creation and archival with a single policy schedule. In the second example, we will create a policy to automate snapshot creation and archival using multiple policy schedules. One schedule will keep daily/weekly snapshots in the Amazon EBS Snapshot Standard tier (standard tier), while the other moves snapshots created on a monthly cadence to the EBS Snapshots Archive tier.\n"
+	"content": "Introduction In this workshop, we\u0026rsquo;ll demonstrate two methods of automating snapshot archival and management using Data Lifecycle Manager. Additionally, we\u0026rsquo;ll provide instructions on utilizing the EC2 Console to observe the snapshots managed and archived by Data Lifecycle Manager. The first method involves establishing an age-based policy for automating the creation and archival of snapshots through a singular policy schedule. The second method introduces a strategy to automate snapshot creation and archival across multiple policy schedules. One schedule is designed to maintain daily/weekly snapshots within the Amazon EBS Snapshot Standard tier, whereas another schedule is tasked with transferring snapshots generated on a monthly basis to the EBS Snapshots Archive tier.\n"
 },
 {
 	"uri": "/2-prerequiste/2.1-lauchec2/",
-	"title": "Launch EC2 instance",
+	"title": "Launch EC2 Instance",
 	"tags": [],
 	"description": "",
-	"content": "Launch EC2 instance  In the AWS Management console, find and select EC2   In the EC2 console, select Instances\n Select Launch instances     In the Lauch instances console\n Enter Name and tags as FCJ Snapshot     For Key pair, you can choose Proceed without a key pair (Not recommended)\n For Networking you can keep the same configuration.    For storage keep the same and then select Launch instance   After launch EC2, select View all instances  Wait about 2 minutes, Status check is 2/2 checks passed  Select the instance created and select Storage, then select Volume  Set the volume tag as FCJ-Volume  "
+	"content": "Launch EC2 Instance   In the AWS Management Console, navigate to and select EC2.\n  Within the EC2 console, click on Instances.\n Then, click on Launch instances.    On the Launch Instances page:\n Specify Name and tags as FCJ Snapshot.    Under Key Pair, you may select Proceed without a key pair (Not recommended).\n For Networking, retain the default configuration.    For Storage, maintain the default settings and then click on Launch instance.\n  Once the EC2 instance is launched, click on View all instances.\n  Allow approximately 2 minutes for the instance to initialize. Wait until the Status check shows 2/2 checks passed.\n  Select the newly created instance, navigate to Storage, and then click on Volume.\n  Assign the volume tag as FCJ-Volume.\n  "
 },
 {
 	"uri": "/2-prerequiste/",
-	"title": "Preparation ",
+	"title": "Preparation",
 	"tags": [],
 	"description": "",
-	"content": "Preparation We will prepare an EC2 to use in the next steps.\n Launch EC2 instance  "
+	"content": "Preparation We will prepare an EC2 instance for use in subsequent steps.\n Launch an EC2 instance  "
 },
 {
 	"uri": "/3-singlepolicyschedule/",
-	"title": "Using a single policy schedule",
+	"title": "Using a Single Policy Schedule",
 	"tags": [],
 	"description": "",
-	"content": "Use a policy schedule   Access to EC2 console\n Select Lifecycle Manager Select Next step     In the setting step, select Target resources\n Target resource type select Volume Select by tags as FCJ-Volume    Use the default IAM role.  Then select Next   For Schedule configuration.\n In this section, we will configure 1 schedule and 1 policy. Section Schedule name, name it arbitrarily. In the Frequency section, select Daily. Every, choose 1 hour. Starting at at 14:00, you can customize. For *Retention type, choose 30 days.    Select Review policy  Select Create policy  Create lifecycle policy successfully.  "
+	"content": "Use a Policy Schedule   Access the EC2 Console\n Navigate to the Lifecycle Manager. Click on Next step.    In the Settings Step, Target Resources\n For Target resource type, choose Volume. Filter by tags, specifically FCJ-Volume.    Utilize the Default IAM Role\n  Proceed by Selecting Next\n  Configure the Schedule\n This step involves setting up one schedule and one policy. In the Schedule name field, enter a name of your choice. For Frequency, select Daily. Under Every, choose 1 hour. Set Starting at to 14:00 or adjust as needed. For Retention type, select 30 days.    Review the Policy\n  Create the Policy\n  Lifecycle Policy Created Successfully\n  "
 },
 {
 	"uri": "/4-mutilplolicyschedule/",

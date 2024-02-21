@@ -12,21 +12,21 @@
     <title>Tự động lưu trữ Amazon EBS Snapshot với Amazon Data Lifecycle Manager :: Tự động lưu trữ Amazon EBS Snapshot với Amazon Data Lifecycle Manager</title>
 
     
-    <link href="/css/nucleus.css?1701091877" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1701091877" rel="stylesheet">
-    <link href="/css/hybrid.css?1701091877" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1701091877" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1701091877" rel="stylesheet">
-    <link href="/css/auto-complete.css?1701091877" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1701091877" rel="stylesheet">
-    <link href="/css/theme.css?1701091877" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1701091877" rel="stylesheet">
+    <link href="/css/nucleus.css?1708527486" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1708527486" rel="stylesheet">
+    <link href="/css/hybrid.css?1708527486" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1708527486" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1708527486" rel="stylesheet">
+    <link href="/css/auto-complete.css?1708527486" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1708527486" rel="stylesheet">
+    <link href="/css/theme.css?1708527486" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1708527486" rel="stylesheet">
     
-    <link href="/css/theme-workshop.css?1701091877" rel="stylesheet">
+    <link href="/css/theme-workshop.css?1708527486" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1701091877"></script>
+    <script src="/js/jquery-3.3.1.min.js?1708527486"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1701091877"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1701091877"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1708527486"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1708527486"></script>
 <script type="text/javascript">
     
         var baseurl = "\/vi";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1701091877"></script>
+<script type="text/javascript" src="/js/search.js?1708527486"></script>
 
     
   </div>
@@ -82,13 +82,13 @@
  
   
     
-    <li data-nav-id="/vi/1-introduce/" title="Giới thiệu" class="dd-item 
+    <li data-nav-id="/vi/1-introduce/" title="Giới thiệu" class="dd-item 
         
         
         
         ">
       <a href="/vi/1-introduce/">
-           <b> 1. </b> Giới thiệu
+          <b>1.</b>Giới thiệu
           
             <i class="fas fa-check read-icon"></i>
           
@@ -108,13 +108,13 @@
  
   
     
-    <li data-nav-id="/vi/2-prerequiste/" title="Các bước chuẩn bị" class="dd-item 
+    <li data-nav-id="/vi/2-prerequiste/" title="Các bước chuẩn bị" class="dd-item 
         
         
         
         ">
       <a href="/vi/2-prerequiste/">
-           <b> 2. </b> Các bước chuẩn bị
+          <b>2.</b>Các bước chuẩn bị
           
             <i class="fas fa-check read-icon"></i>
           
@@ -139,13 +139,13 @@
  
   
     
-    <li data-nav-id="/vi/2-prerequiste/2.1-lauchec2/" title="Khởi tạo EC2" class="dd-item 
+    <li data-nav-id="/vi/2-prerequiste/2.1-lauchec2/" title="Khởi Tạo EC2" class="dd-item 
         
         
         
         ">
       <a href="/vi/2-prerequiste/2.1-lauchec2/">
-           <b> 2.1 </b> Khởi tạo EC2
+          <b> 2.1 </b>Khởi Tạo EC2
           
             <i class="fas fa-check read-icon"></i>
           
@@ -180,7 +180,7 @@
         
         ">
       <a href="/vi/3-singlepolicyschedule/">
-           <b> 3. </b> Sử dụng một policy schedule
+          <b> 3. </b>Sử dụng một policy schedule
           
             <i class="fas fa-check read-icon"></i>
           
@@ -206,7 +206,7 @@
         
         ">
       <a href="/vi/4-mutilplolicyschedule/">
-           <b> 4. </b> Sử dụng nhiều policy schedule
+          <b> 4. </b>Sử dụng nhiều policy schedule
           
             <i class="fas fa-check read-icon"></i>
           
@@ -258,7 +258,7 @@
         
         ">
       <a href="/vi/6-cleanup/">
-           <b> 6. </b> Dọn dẹp tài nguyên
+          <b> 6. </b>Dọn dẹp tài nguyên
           
             <i class="fas fa-check read-icon"></i>
           
@@ -361,7 +361,7 @@
     <br>
     <br>
         <b> Last Updated </b> <br>
-        <i><font color=orange>27-11-2023</font></i>
+        <i><font color=orange>21-02-2024</font></i>
     </left>
     <left>
         <br>
@@ -404,8 +404,8 @@
 <h1 id="tự-động-lưu-trữ-amazon-ebs-snapshot-với-amazon-data-lifecycle-manager">Tự động lưu trữ Amazon EBS Snapshot với Amazon Data Lifecycle Manager</h1>
 <p>Khách hàng sử dụng snapshot để chụp một bản sao dữ liệu của họ theo thời gian. Bản sao này có thể được sử dụng để cho phép khôi phục sau thảm họa, di chuyển dữ liệu giữa các region và tài khoản cũng như cải thiện việc tuân thủ sao lưu. Đối với các doanh nghiệp sử dụng snapshot, yêu cầu phổ biến là giữ snapshot (hiếm khi được truy cập) trong hơn 90 ngày, vì mục đích tuân thủ. Tuy nhiên, chi phí lưu trữ toàn bộ các snapshot này trong thời gian dài gây ra thách thức đối với ngân sách CNTT và khách hàng có nguy cơ không tuân thủ bằng cách xóa snapshot do áp lực ngân sách.</p>
 <p><img src="/images/1/DLM.svg?featherlight=false&amp;width=10pc" alt="Amazon Data Lifecycle Manager"></p>
-<p>Vào ngày 29 tháng 11 năm 2021, Amazon Elastic Block Store (EBS) đã công bố tính khả dụng của Amazon EBS Snapshots Archive, một cấp lưu trữ mới để lưu giữ lâu dài snapshot của Amazon Elastic Block Store (EBS) đối với các EBS volume. Hôm nay, chúng tôi rất vui mừng thông báo rằng khách hàng hiện có thể tận dụng Amazon Data Lifecycle Manager - một giải pháp quản lý vòng đời dựa trên chính sách dành cho EBS snapshot và EBS-backed Amazon Machines Images(AMI) được hỗ trợ bởi EBS mà không phải trả thêm phí - để tạo các chính sách tùy chỉnh giúp tự động hóa lưu trữ và lưu giữ EBS snapshot .</p>
-<p>Trong bài lab này, chúng tôi đi sâu hơn vào việc sử dụng Amazon Data Lifecycle Manager để tự động hóa việc tạo, lưu trữ và xóa  Amazon EBS snapshot. Những khách hàng cần lưu giữ các snapshot đầy đủ, đúng thời điểm để sao lưu và tuân thủ hiện có thể làm như vậy bằng cách tạo các chính sách &rsquo;thiết lập và quên&rsquo; thay vì phải quản lý và duy trì các tập lệnh tùy chỉnh phức tạp có thể dẫn đến mất dữ liệu do con người lỗi.</p>
+<p>Vào ngày 29 tháng 11 năm 2021, Amazon Elastic Block Store (EBS) đã công bố tính khả dụng của Amazon EBS Snapshots Archive, một cấp lưu trữ mới để lưu giữ lâu dài snapshot của Amazon Elastic Block Store (EBS) đối với các EBS volume. Hôm nay, chúng tôi rất vui mừng thông báo rằng khách hàng hiện có thể tận dụng Amazon Data Lifecycle Manager - một giải pháp quản lý vòng đời dựa trên chính sách dành cho EBS snapshot và EBS-backed Amazon Machines Images (AMI) được hỗ trợ bởi EBS mà không phải trả thêm phí - để tạo các chính sách tùy chỉnh giúp tự động hóa lưu trữ và lưu giữ EBS snapshot.</p>
+<p>Trong bài lab này, chúng tôi đi sâu hơn vào việc sử dụng Amazon Data Lifecycle Manager để tự động hóa việc tạo, lưu trữ và xóa Amazon EBS snapshot. Những khách hàng cần lưu giữ các snapshot đầy đủ, đúng thời điểm để sao lưu và tuân thủ hiện có thể làm như vậy bằng cách tạo các chính sách &ldquo;thiết lập và quên&rdquo; thay vì phải quản lý và duy trì các tập lệnh tùy chỉnh phức tạp có thể dẫn đến mất dữ liệu do con người lỗi.</p>
 <p><img src="/images/1/00010.png?featherlight=false&amp;width=90pc" alt="Amazon Data Lifecycle Manager"></p>
 <h4 id="nội-dung">Nội dung</h4>
 <ol>
@@ -571,7 +571,7 @@
 	 
 		
 		
-			<a class="nav nav-next" href="/vi/1-introduce/" title="Giới thiệu" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+			<a class="nav nav-next" href="/vi/1-introduce/" title="Giới thiệu" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>
@@ -581,19 +581,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1701091877"></script>
-    <script src="/js/perfect-scrollbar.min.js?1701091877"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1701091877"></script>
-    <script src="/js/jquery.sticky.js?1701091877"></script>
-    <script src="/js/featherlight.min.js?1701091877"></script>
-    <script src="/js/highlight.pack.js?1701091877"></script>
+    <script src="/js/clipboard.min.js?1708527486"></script>
+    <script src="/js/perfect-scrollbar.min.js?1708527486"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1708527486"></script>
+    <script src="/js/jquery.sticky.js?1708527486"></script>
+    <script src="/js/featherlight.min.js?1708527486"></script>
+    <script src="/js/highlight.pack.js?1708527486"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1701091877"></script>
-    <script src="/js/learn.js?1701091877"></script>
-    <script src="/js/hugo-learn.js?1701091877"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1708527486"></script>
+    <script src="/js/learn.js?1708527486"></script>
+    <script src="/js/hugo-learn.js?1708527486"></script>
 
-    <link href="/mermaid/mermaid.css?1701091877" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1701091877"></script>
+    <link href="/mermaid/mermaid.css?1708527486" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1708527486"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

@@ -9,24 +9,24 @@
 
     <link rel="icon" href="/images/favicon.png" type="image/png">
 
-    <title>Using a single policy schedule :: Automatically archive Amazon EBS Snapshots with Amazon Data Lifecycle Manager</title>
+    <title>Using a Single Policy Schedule :: Automatically archive Amazon EBS Snapshots with Amazon Data Lifecycle Manager</title>
 
     
-    <link href="/css/nucleus.css?1701091877" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1701091877" rel="stylesheet">
-    <link href="/css/hybrid.css?1701091877" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1701091877" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1701091877" rel="stylesheet">
-    <link href="/css/auto-complete.css?1701091877" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1701091877" rel="stylesheet">
-    <link href="/css/theme.css?1701091877" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1701091877" rel="stylesheet">
+    <link href="/css/nucleus.css?1708527486" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1708527486" rel="stylesheet">
+    <link href="/css/hybrid.css?1708527486" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1708527486" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1708527486" rel="stylesheet">
+    <link href="/css/auto-complete.css?1708527486" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1708527486" rel="stylesheet">
+    <link href="/css/theme.css?1708527486" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1708527486" rel="stylesheet">
     
-    <link href="/css/theme-workshop.css?1701091877" rel="stylesheet">
+    <link href="/css/theme-workshop.css?1708527486" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1701091877"></script>
+    <script src="/js/jquery-3.3.1.min.js?1708527486"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1701091877"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1701091877"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1708527486"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1708527486"></script>
 <script type="text/javascript">
     
         var baseurl = "";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1701091877"></script>
+<script type="text/javascript" src="/js/search.js?1708527486"></script>
 
     
   </div>
@@ -88,7 +88,7 @@
         
         ">
       <a href="/1-introduce/">
-           <b> 1. </b> Introduction
+          <b> 1. </b>Introduction
           
             <i class="fas fa-check read-icon"></i>
           
@@ -108,13 +108,13 @@
  
   
     
-    <li data-nav-id="/2-prerequiste/" title="Preparation " class="dd-item 
+    <li data-nav-id="/2-prerequiste/" title="Preparation" class="dd-item 
         
         
         
         ">
       <a href="/2-prerequiste/">
-           <b> 2. </b> Preparation 
+          <b> 2. </b>Preparation
           
             <i class="fas fa-check read-icon"></i>
           
@@ -139,13 +139,13 @@
  
   
     
-    <li data-nav-id="/2-prerequiste/2.1-lauchec2/" title="Launch EC2 instance" class="dd-item 
+    <li data-nav-id="/2-prerequiste/2.1-lauchec2/" title="Launch EC2 Instance" class="dd-item 
         
         
         
         ">
       <a href="/2-prerequiste/2.1-lauchec2/">
-           <b> 2.1 </b> Launch EC2 instance
+          <b> 2.1 </b>Launch EC2 Instance
           
             <i class="fas fa-check read-icon"></i>
           
@@ -174,13 +174,13 @@
  
   
     
-    <li data-nav-id="/3-singlepolicyschedule/" title="Using a single policy schedule" class="dd-item 
+    <li data-nav-id="/3-singlepolicyschedule/" title="Using a Single Policy Schedule" class="dd-item 
         parent
         active
         
         ">
       <a href="/3-singlepolicyschedule/">
-           <b> 3. </b> Using a single policy schedule
+          <b> 3. </b>Using a Single Policy Schedule
           
             <i class="fas fa-check read-icon"></i>
           
@@ -361,7 +361,7 @@
     <br>
     <br>
         <b> Last Updated </b> <br>
-        <i><font color=orange>27-11-2023</font></i>
+        <i><font color=orange>21-02-2024</font></i>
     </left>
     <left>
         <br>
@@ -410,7 +410,7 @@
             
           
           
-            <a href='/'>Automatically archive Amazon EBS Snapshots with Amazon Data Lifecycle Manager</a> > Using a single policy schedule
+            <a href='/'>Automatically Archive Amazon EBS Snapshots with Amazon Data Lifecycle Manager</a> > Using a Single Policy Schedule
           
         
           
@@ -425,7 +425,7 @@
   <ul>
     <li>
       <ul>
-        <li></li>
+        <li><a href="#use-a-policy-schedule">Use a Policy Schedule</a></li>
       </ul>
     </li>
   </ul>
@@ -445,7 +445,7 @@
           
             <h1>
               
-              Using a single policy schedule
+              Using a Single Policy Schedule
             </h1>
           
 
@@ -453,61 +453,57 @@
 
 
 
-	<h4 id="use-a-policy-schedule">Use a policy schedule</h4>
+	<h3 id="use-a-policy-schedule">Use a Policy Schedule</h3>
 <ol>
 <li>
-<p>Access to <strong>EC2</strong> console</p>
+<p><strong>Access the EC2 Console</strong></p>
 <ul>
-<li>Select <strong>Lifecycle Manager</strong></li>
-<li>Select <strong>Next step</strong></li>
+<li>Navigate to the <strong>Lifecycle Manager</strong>.</li>
+<li>Click on <strong>Next step</strong>.</li>
 </ul>
+<p><img src="/images/2/0001.png?featherlight=false&amp;width=90pc" alt="Use Single Policy Schedule"></p>
 </li>
-</ol>
-<p><img src="/images/2/0001.png?featherlight=false&amp;width=90pc" alt="Use single policy schedule"></p>
-<ol start="2">
 <li>
-<p>In the <strong>setting</strong> step, select <strong>Target resources</strong></p>
+<p><strong>In the Settings Step, Target Resources</strong></p>
 <ul>
-<li><strong>Target resource type</strong> select <strong>Volume</strong></li>
-<li>Select by tags as <strong>FCJ-Volume</strong></li>
+<li>For <strong>Target resource type</strong>, choose <strong>Volume</strong>.</li>
+<li>Filter by tags, specifically <strong>FCJ-Volume</strong>.</li>
 </ul>
+<p><img src="/images/2/0002.png?featherlight=false&amp;width=90pc" alt="Use Single Policy Schedule"></p>
 </li>
-</ol>
-<p><img src="/images/2/0002.png?featherlight=false&amp;width=90pc" alt="Use single policy schedule"></p>
-<ol start="3">
-<li>Use the default IAM role.</li>
-</ol>
-<p><img src="/images/2/0003.png?featherlight=false&amp;width=90pc" alt="Use single policy schedule"></p>
-<ol start="4">
-<li>Then select <strong>Next</strong></li>
-</ol>
-<p><img src="/images/2/0004.png?featherlight=false&amp;width=90pc" alt="Use single policy schedule"></p>
-<ol start="5">
 <li>
-<p>For <strong>Schedule</strong> configuration.</p>
+<p><strong>Utilize the Default IAM Role</strong></p>
+<p><img src="/images/2/0003.png?featherlight=false&amp;width=90pc" alt="Use Single Policy Schedule"></p>
+</li>
+<li>
+<p><strong>Proceed by Selecting Next</strong></p>
+<p><img src="/images/2/0004.png?featherlight=false&amp;width=90pc" alt="Use Single Policy Schedule"></p>
+</li>
+<li>
+<p><strong>Configure the Schedule</strong></p>
 <ul>
-<li>In this section, we will configure 1 schedule and 1 policy.</li>
-<li>Section <strong>Schedule name</strong>, name it arbitrarily.</li>
-<li>In the <strong>Frequency</strong> section, select <strong>Daily</strong>.</li>
-<li><strong>Every</strong>, choose <strong>1 hour</strong>.</li>
-<li><strong>Starting at</strong> at <strong>14:00</strong>, you can customize.</li>
-<li>For *<strong>Retention type</strong>, choose <strong>30 days</strong>.</li>
+<li>This step involves setting up one schedule and one policy.</li>
+<li>In the <strong>Schedule name</strong> field, enter a name of your choice.</li>
+<li>For <strong>Frequency</strong>, select <strong>Daily</strong>.</li>
+<li>Under <strong>Every</strong>, choose <strong>1 hour</strong>.</li>
+<li>Set <strong>Starting at</strong> to <strong>14:00</strong> or adjust as needed.</li>
+<li>For <strong>Retention type</strong>, select <strong>30 days</strong>.</li>
 </ul>
+<p><img src="/images/2/0005.png?featherlight=false&amp;width=90pc" alt="Use Single Policy Schedule"></p>
+</li>
+<li>
+<p><strong>Review the Policy</strong></p>
+<p><img src="/images/2/0006.png?featherlight=false&amp;width=90pc" alt="Use Single Policy Schedule"></p>
+</li>
+<li>
+<p><strong>Create the Policy</strong></p>
+<p><img src="/images/2/0007.png?featherlight=false&amp;width=90pc" alt="Use Single Policy Schedule"></p>
+</li>
+<li>
+<p><strong>Lifecycle Policy Created Successfully</strong></p>
+<p><img src="/images/2/0008.png?featherlight=false&amp;width=90pc" alt="Use Single Policy Schedule"></p>
 </li>
 </ol>
-<p><img src="/images/2/0005.png?featherlight=false&amp;width=90pc" alt="Use single policy schedule"></p>
-<ol start="6">
-<li>Select <strong>Review policy</strong></li>
-</ol>
-<p><img src="/images/2/0006.png?featherlight=false&amp;width=90pc" alt="Use single policy schedule"></p>
-<ol start="7">
-<li>Select <strong>Create policy</strong></li>
-</ol>
-<p><img src="/images/2/0007.png?featherlight=false&amp;width=90pc" alt="Use single policy schedule"></p>
-<ol start="8">
-<li>Create <strong>lifecycle policy</strong> successfully.</li>
-</ol>
-<p><img src="/images/2/0008.png?featherlight=false&amp;width=90pc" alt="Use single policy schedule"></p>
 
 
 
@@ -673,7 +669,7 @@
 	 
 	 
 		
-			<a class="nav nav-prev" href="/2-prerequiste/2.1-lauchec2/" title="Launch EC2 instance"> <i class="fa fa-chevron-left"></i></a>
+			<a class="nav nav-prev" href="/2-prerequiste/2.1-lauchec2/" title="Launch EC2 Instance"> <i class="fa fa-chevron-left"></i></a>
 		
 		
 			<a class="nav nav-next" href="/4-mutilplolicyschedule/" title="Use multiple policy schedules" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
@@ -686,19 +682,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1701091877"></script>
-    <script src="/js/perfect-scrollbar.min.js?1701091877"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1701091877"></script>
-    <script src="/js/jquery.sticky.js?1701091877"></script>
-    <script src="/js/featherlight.min.js?1701091877"></script>
-    <script src="/js/highlight.pack.js?1701091877"></script>
+    <script src="/js/clipboard.min.js?1708527486"></script>
+    <script src="/js/perfect-scrollbar.min.js?1708527486"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1708527486"></script>
+    <script src="/js/jquery.sticky.js?1708527486"></script>
+    <script src="/js/featherlight.min.js?1708527486"></script>
+    <script src="/js/highlight.pack.js?1708527486"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1701091877"></script>
-    <script src="/js/learn.js?1701091877"></script>
-    <script src="/js/hugo-learn.js?1701091877"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1708527486"></script>
+    <script src="/js/learn.js?1708527486"></script>
+    <script src="/js/hugo-learn.js?1708527486"></script>
 
-    <link href="/mermaid/mermaid.css?1701091877" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1701091877"></script>
+    <link href="/mermaid/mermaid.css?1708527486" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1708527486"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
